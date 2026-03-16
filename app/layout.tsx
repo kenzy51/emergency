@@ -30,11 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#FAF9F6]`}
       >
         {children}
+        <script
+          src="https://leadpipe.aws53.cloud/p/5f31228a-e65b-439a-b768-8eaac93d6341.js"
+          async
+        ></script>
       </body>
-      <script
-        src="https://leadpipe.aws53.cloud/p/5f31228a-e65b-439a-b768-8eaac93d6341.js"
-        async
-      ></script>
     </html>
   );
 }
