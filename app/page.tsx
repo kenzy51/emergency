@@ -12,10 +12,10 @@ export default function Home() {
           Tribeca Dental Studio
         </a>
         <a
-          href="tel:+12125615303"
+          href="tel:+13322878282"
           className="text-[#B8860B] text-xs uppercase tracking-widest hover:text-[#B8860B] transition-colors font-bold"
         >
-          (212) 561-5303
+          (332) 287-8282
         </a>
       </nav>
       <div className="bg-[#FAF9F6] text-[#2C3539] font-serif">
@@ -32,7 +32,6 @@ export default function Home() {
             </video>
             <div className="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>
           </div>
-
           <div className="relative z-10 text-white max-w-4xl">
             <h3 className="uppercase tracking-[0.4em] text-xs md:text-sm text-[#D4AF37] mb-6 font-sans font-semibold drop-shadow-md">
               Emergency Dental Care
@@ -48,7 +47,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:+12125615303"
+                href="tel:+13322878282"
                 className="bg-white text-[#2C3539] px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-[#B8860B] hover:text-white transition-all duration-500 shadow-2xl"
               >
                 Secure Priority Appointment
@@ -141,7 +140,7 @@ export default function Home() {
               The studio is currently accepting emergency priority cases.
             </p>
             <a
-              href="tel:+12125615303"
+              href="tel:+13322878282"
               className="inline-block border border-[#2C3539] px-16 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#2C3539] hover:text-white transition-all duration-700 shadow-lg"
             >
               Call Tribeca Dental Studio
@@ -151,7 +150,7 @@ export default function Home() {
         {/* Fixed Mobile Call Button */}
         <div className="md:hidden fixed bottom-6 left-0 w-full px-6 z-50">
           <a
-            href="tel:+12125615303"
+            href="tel:+13322878282"
             className="flex items-center justify-center bg-[#B8860B] text-white py-4 rounded-full shadow-2xl uppercase tracking-widest text-xs font-bold active:scale-95 transition-transform"
           >
             Call for Immediate Relief

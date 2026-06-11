@@ -1,5 +1,7 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { brandonGrotesque, dDin } from "./fonts"; 
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#FAF9F6]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${brandonGrotesque.variable} ${dDin.variable} antialiased min-h-screen bg-[#FAF9F6]`}
       >
         {children}
         <script
