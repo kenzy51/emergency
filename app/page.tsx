@@ -12,10 +12,10 @@ export default function Home() {
           Tribeca Dental Studio
         </a>
         <a
-          href="tel:+13322878282"
+          href="tel:+212561-5303"
           className="text-[#B8860B] text-xs uppercase tracking-widest hover:text-[#B8860B] transition-colors font-bold"
         >
-          (332) 287-8282
+          (212) 561-5303
         </a>
       </nav>
       <div className="bg-[#FAF9F6] text-[#2C3539] font-serif">
@@ -47,10 +47,16 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:+13322878282"
-                className="bg-white text-[#2C3539] px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-[#B8860B] hover:text-white transition-all duration-500 shadow-2xl"
+                href="tel:+2125615303"
+                className="w-full sm:w-auto bg-white text-[#2C3539] px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-[#B8860B] hover:text-white transition-all duration-500 shadow-2xl"
               >
                 Secure Priority Appointment
+              </a>
+              <a
+                href="https://tribecadentalstudio.com/book"
+                className="w-full sm:w-auto border border-white text-white px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-[#2C3539] transition-all duration-500 shadow-2xl"
+              >
+                Or Book Online Here
               </a>
             </div>
           </div>
@@ -139,18 +145,27 @@ export default function Home() {
             <p className="text-gray-500 mb-12 text-lg italic">
               The studio is currently accepting emergency priority cases.
             </p>
-            <a
-              href="tel:+13322878282"
-              className="inline-block border border-[#2C3539] px-16 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#2C3539] hover:text-white transition-all duration-700 shadow-lg"
-            >
-              Call Tribeca Dental Studio
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+              <a
+                href="tel:+2125615303"
+                className="w-full border border-[#2C3539] px-8 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#2C3539] hover:text-white transition-all duration-700 shadow-lg"
+              >
+                Call Tribeca Dental
+              </a>
+              <a
+                href="https://www.patientsreach.com/schedule/TribecaDentalStudio/"
+                className="w-full bg-[#2C3539] text-white border border-[#2C3539] px-8 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-transparent hover:text-[#2C3539] transition-all duration-700 shadow-lg"
+              >
+                Book Appointment
+              </a>
+            </div>
           </div>
         </section>
-        {/* Fixed Mobile Call Button */}
+        
+ 
         <div className="md:hidden fixed bottom-6 left-0 w-full px-6 z-50">
           <a
-            href="tel:+13322878282"
+            href="tel:+2125615303"
             className="flex items-center justify-center bg-[#B8860B] text-white py-4 rounded-full shadow-2xl uppercase tracking-widest text-xs font-bold active:scale-95 transition-transform"
           >
             Call for Immediate Relief
