@@ -1,8 +1,23 @@
 import Image from "next/image";
+import Script from "next/script";
 
 export default function Home() {
   return (
     <>
+      <Script id="pbn-dni-script" strategy="afterInteractive">
+        {`
+          (function() {
+              var d = document;
+              var s = d.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = '//appcontent.practicenumbers.com/phone_number_replace_305fcb9753294ecebd02aba6da9b76c4.js';
+              var x = d.getElementsByTagName('script')[0];
+              x.parentNode.insertBefore(s, x);
+          })();
+        `}
+      </Script>
+
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 md:p-8 backdrop-blur-md border-black/5 transition-all duration-300">
         <a
           target="_blank"
@@ -12,7 +27,7 @@ export default function Home() {
           Tribeca Dental Studio
         </a>
         <a
-          href="tel:+212561-5303"
+          href="tel:+12125615303"
           className="text-[#B8860B] text-xs uppercase tracking-widest hover:text-[#B8860B] transition-colors font-bold"
         >
           (212) 561-5303
@@ -47,7 +62,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:+2125615303"
+                href="tel:+12125615303"
                 className="w-full sm:w-auto bg-white text-[#2C3539] px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-[#B8860B] hover:text-white transition-all duration-500 shadow-2xl"
               >
                 Secure Priority Appointment
@@ -147,7 +162,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
               <a
-                href="tel:+2125615303"
+                href="tel:+12125615303"
                 className="w-full border border-[#2C3539] px-8 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#2C3539] hover:text-white transition-all duration-700 shadow-lg"
               >
                 Call Tribeca Dental
@@ -161,11 +176,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
- 
+
         <div className="md:hidden fixed bottom-6 left-0 w-full px-6 z-50">
           <a
-            href="tel:+2125615303"
+            href="tel:+12125615303"
             className="flex items-center justify-center bg-[#B8860B] text-white py-4 rounded-full shadow-2xl uppercase tracking-widest text-xs font-bold active:scale-95 transition-transform"
           >
             Call for Immediate Relief
