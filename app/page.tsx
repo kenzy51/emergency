@@ -53,7 +53,7 @@ export default function Home() {
                 Secure Priority Appointment
               </a>
               <a
-                href="https://tribecadentalstudio.com/book"
+                href="https://www.patientsreach.com/schedule/TribecaDentalStudio/"
                 className="w-full sm:w-auto border border-white text-white px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-[#2C3539] transition-all duration-500 shadow-2xl"
               >
                 Or Book Online Here
