@@ -2,21 +2,39 @@
 "use client"; // Required for handling onClick interactivity in Next.js App Router
 
 import Image from "next/image";
+import Script from "next/script";
 
 export default function Home() {
-  // Helper function to handle pixel event conversions cleanly
-  const trackEmergencyCallClick = () => {
+  // Enhanced tracking function to distinguish between phone calls and online booking clicks
+  const trackConversion = (actionType: "phone_call" | "online_booking") => {
     if (typeof window !== "undefined" && (window as any).oaiq) {
       (window as any).oaiq("measure", "registration_completed", {
         type: "customer_action",
         amount: 0,
         currency: "USD",
+        // Passing the specific action details to optimize your meta/ad sets
+        label: actionType 
       });
     }
   };
 
   return (
     <>
+      {/* Practicenumbers Dynamic Number Insertion Script */}
+      <Script id="pbn-dni-script" strategy="afterInteractive">
+        {`
+          (function() {
+              var d = document;
+              var s = d.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = '//appcontent.practicenumbers.com/phone_number_replace_305fcb9753294ecebd02aba6da9b76c4.js';
+              var x = d.getElementsByTagName('script')[0];
+              x.parentNode.insertBefore(s, x);
+          })();
+        `}
+      </Script>
+
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 md:p-8 backdrop-blur-md border-black/5 transition-all duration-300">
         <a
           target="_blank"
@@ -26,13 +44,14 @@ export default function Home() {
           Tribeca Dental Studio
         </a>
         <a
-          href="tel:+13322878282"
-          onClick={trackEmergencyCallClick}
+          href="tel:+12125615303"
+          onClick={() => trackConversion("phone_call")}
           className="text-[#B8860B] text-xs uppercase tracking-widest hover:text-[#B8860B] transition-colors font-bold"
         >
-          (332) 287-8282
+          (212) 561-5303
         </a>
       </nav>
+      
       <div className="bg-[#FAF9F6] text-[#2C3539] font-serif">
         <section className="relative h-screen flex flex-col justify-center items-center text-center p-6 overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -62,11 +81,18 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:+13322878282"
-                onClick={trackEmergencyCallClick}
-                className="bg-white text-[#2C3539] px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-[#B8860B] hover:text-white transition-all duration-500 shadow-2xl"
+                href="tel:+12125615303"
+                onClick={() => trackConversion("phone_call")}
+                className="w-full sm:w-auto bg-white text-[#2C3539] px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-[#B8860B] hover:text-white transition-all duration-500 shadow-2xl text-center"
               >
                 Secure Priority Appointment
+              </a>
+              <a
+                href="https://www.patientsreach.com/schedule/TribecaDentalStudio/"
+                onClick={() => trackConversion("online_booking")}
+                className="w-full sm:w-auto border border-white text-white px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-[#2C3539] transition-all duration-500 shadow-2xl text-center"
+              >
+                Or Book Online Here
               </a>
             </div>
           </div>
@@ -155,21 +181,30 @@ export default function Home() {
             <p className="text-gray-500 mb-12 text-lg italic">
               The studio is currently accepting emergency priority cases.
             </p>
-            <a
-              href="tel:+13322878282"
-              onClick={trackEmergencyCallClick}
-              className="inline-block border border-[#2C3539] px-16 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#2C3539] hover:text-white transition-all duration-700 shadow-lg"
-            >
-              Call Tribeca Dental Studio
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+              <a
+                href="tel:+12125615303"
+                onClick={() => trackConversion("phone_call")}
+                className="w-full border border-[#2C3539] px-8 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#2C3539] hover:text-white transition-all duration-700 shadow-lg text-center"
+              >
+                Call Tribeca Dental
+              </a>
+              <a
+                href="https://www.patientsreach.com/schedule/TribecaDentalStudio/"
+                onClick={() => trackConversion("online_booking")}
+                className="w-full bg-[#2C3539] text-white border border-[#2C3539] px-8 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-transparent hover:text-[#2C3539] transition-all duration-700 shadow-lg text-center"
+              >
+                Book Appointment
+              </a>
+            </div>
           </div>
         </section>
-        
+
         {/* Fixed Mobile Call Button */}
         <div className="md:hidden fixed bottom-6 left-0 w-full px-6 z-50">
           <a
-            href="tel:+13322878282"
-            onClick={trackEmergencyCallClick}
+            href="tel:+12125615303"
+            onClick={() => trackConversion("phone_call")}
             className="flex items-center justify-center bg-[#B8860B] text-white py-4 rounded-full shadow-2xl uppercase tracking-widest text-xs font-bold active:scale-95 transition-transform"
           >
             Call for Immediate Relief
