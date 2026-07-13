@@ -1,6 +1,20 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client"; // Required for handling onClick interactivity in Next.js App Router
+
 import Image from "next/image";
 
 export default function Home() {
+  // Helper function to handle pixel event conversions cleanly
+  const trackEmergencyCallClick = () => {
+    if (typeof window !== "undefined" && (window as any).oaiq) {
+      (window as any).oaiq("measure", "registration_completed", {
+        type: "customer_action",
+        amount: 0,
+        currency: "USD",
+      });
+    }
+  };
+
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 md:p-8 backdrop-blur-md border-black/5 transition-all duration-300">
@@ -13,6 +27,7 @@ export default function Home() {
         </a>
         <a
           href="tel:+13322878282"
+          onClick={trackEmergencyCallClick}
           className="text-[#B8860B] text-xs uppercase tracking-widest hover:text-[#B8860B] transition-colors font-bold"
         >
           (332) 287-8282
@@ -48,6 +63,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="tel:+13322878282"
+                onClick={trackEmergencyCallClick}
                 className="bg-white text-[#2C3539] px-12 py-5 uppercase tracking-widest text-xs font-bold hover:bg-[#B8860B] hover:text-white transition-all duration-500 shadow-2xl"
               >
                 Secure Priority Appointment
@@ -141,16 +157,19 @@ export default function Home() {
             </p>
             <a
               href="tel:+13322878282"
+              onClick={trackEmergencyCallClick}
               className="inline-block border border-[#2C3539] px-16 py-6 uppercase tracking-[0.2em] text-xs font-bold hover:bg-[#2C3539] hover:text-white transition-all duration-700 shadow-lg"
             >
               Call Tribeca Dental Studio
             </a>
           </div>
         </section>
+        
         {/* Fixed Mobile Call Button */}
         <div className="md:hidden fixed bottom-6 left-0 w-full px-6 z-50">
           <a
             href="tel:+13322878282"
+            onClick={trackEmergencyCallClick}
             className="flex items-center justify-center bg-[#B8860B] text-white py-4 rounded-full shadow-2xl uppercase tracking-widest text-xs font-bold active:scale-95 transition-transform"
           >
             Call for Immediate Relief
